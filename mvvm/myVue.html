@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id="mvvm-app">
+    <input type="text" v-model="word">
+    <h3>{{title}}</h3>
+    <p>{{word}}</p>
+
+    <button v-on:click="sayHi">change model</button>
+</div>
+
+<script src="./observer.js"></script>
+<script src="./watcher.js"></script>
+<script src="./compile.js"></script>
+<script src="./mvvm.js"></script>
+<script>
+    var vm = new MVVM({
+        el: '#mvvm-app',
+        data: {
+
+        	title: 'MVVM',
+            word: 'Hello World!'
+        },
+        methods: {
+            sayHi: function() {     
+               
+                this.data.word = 'Hi, everybody!'; // 怎么把中间的data省略
+                
+
+            }
+        }
+    });
+
+	
+
+
+	
+
+</script>
+</body>
+</html>
